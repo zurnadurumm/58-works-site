@@ -1,6 +1,7 @@
 import { Routes } from "react-router-dom"
 import Home from "./pages/home.jsx"
-
+import { I18nextProvider } from "react-i18next"
+import i18n from '../i18n.js'
 import Terms from "./pages/Terms"
 import { BrowserRouter, Route, Link, Outlet } from "react-router-dom"
 import Events from "./pages/Events"
@@ -11,21 +12,23 @@ import NotFound from "./pages/NotFound"
 
 function App() {
   return (
-    <div className="scroll-smooth">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<NavBar />} />
-          <Route index element={<Home />} />
-          <Route path="terms" element={<Terms />} />
-          <Route path="events" element={<Events />} />
-          <Route path="privacy" element={<Privacy />} />
-          <Route path="*" element={<NotFound />} />
+    <I18nextProvider i18n={i18n}>
+      <div className="scroll-smooth">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<NavBar />} />
+            <Route index element={<Home />} />
+            <Route path="terms" element={<Terms />} />
+            <Route path="events" element={<Events />} />
+            <Route path="privacy" element={<Privacy />} />
+            <Route path="*" element={<NotFound />} />
 
-        </Routes>
+          </Routes>
 
-      </BrowserRouter>
+        </BrowserRouter>
 
-    </div>
+      </div>
+    </I18nextProvider>
 
   )
 }

@@ -3,6 +3,7 @@ import Logo from "../assets/icons/Logo.svg"
 import LanguageSwitch from './LanguageSwitch'
 import Hamburger from '../assets/icons/Hamburger.svg'
 import { Outlet, Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 
 
@@ -10,7 +11,7 @@ import { Outlet, Link } from 'react-router-dom'
 
 function NavBar({ onNavClicked }) {
 
-
+    const { t } = useTranslation()
 
 
 
@@ -37,11 +38,11 @@ function NavBar({ onNavClicked }) {
                 </div>
                 <div className={`-z-10 md:z-0  duration-500 absolute  min-h-[100vh] flex items-center justify-center left-0 md:min-h-0 w-full md:w-fit md:static bg-black ${toggle ? 'top-[100%]' : 'top-[-9999%]'} `}>
                     <ul className='flex  md:flex-row flex-col  items-center gap-3'>
-                        <li><Link to="/" className='md:bg-primary md:hover:bg-neutral text-[white] transition md:shadow-md px-5 py-2 md:rounded-full font-semibold'>Home</Link ></li>
-                        <li><Link to="/" onClick={() => onNavClicked('about')} className='md:bg-primary md:hover:bg-neutral text-[white] transition md:shadow-md px-5 py-2 md:rounded-full font-semibold'>About Us</Link ></li>
-                        <li><Link to="/" className='md:bg-primary md:hover:bg-neutral text-[white] transition md:shadow-md px-5 py-2 md:rounded-full font-semibold'>Why Us?</Link ></li>
-                        <li><Link to="/" className='md:bg-primary md:hover:bg-neutral text-[white] transition md:shadow-md px-5 py-2 md:rounded-full font-semibold'>Contact</Link></li>
-                        <li><Link to="/events" className='md:bg-primary md:hover:bg-neutral text-[white] transition md:shadow-md px-5 py-2 md:rounded-full font-semibold'>Events</Link ></li>
+                        <li><Link to="/" className='md:bg-primary md:hover:bg-neutral text-[white] transition md:shadow-md px-5 py-2 md:rounded-full font-semibold'>{t('home')}</Link ></li>
+                        <li><Link to="/" onClick={() => onNavClicked('about')} className='md:bg-primary md:hover:bg-neutral text-[white] transition md:shadow-md px-5 py-2 md:rounded-full font-semibold'>{t('aboutUs')}</Link ></li>
+                        <li><Link to="/" className='md:bg-primary md:hover:bg-neutral text-[white] transition md:shadow-md px-5 py-2 md:rounded-full font-semibold'> {t('whyUs')} </Link ></li>
+                        <li><Link to="/" className='md:bg-primary md:hover:bg-neutral text-[white] transition md:shadow-md px-5 py-2 md:rounded-full font-semibold'>{t('contact')}</Link></li>
+                        <li><Link to="/events" className='md:bg-primary md:hover:bg-neutral text-[white] transition md:shadow-md px-5 py-2 md:rounded-full font-semibold'>{t('events')}</Link ></li>
 
                     </ul>
                 </div>

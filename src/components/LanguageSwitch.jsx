@@ -1,12 +1,17 @@
 import React, { useState } from 'react'
-import Hamburger from '../assets/icons/Hamburger.svg'
+import { useTranslation } from 'react-i18next'
 
 
 function LanguageSwitch() {
+
+    const { i18n } = useTranslation()
+
     const [language, setLanguage] = useState('tr')
 
-    const changeLanguage = (newLang) => {
-        setLanguage(newLang.target.innerText)
+    const changeLanguage = (lng) => {
+        setLanguage(lng)
+        i18n.changeLanguage(lng)
+
 
 
     }
@@ -21,8 +26,8 @@ function LanguageSwitch() {
 
     return (
         <div className='w-auto flex gap-2 '>
-            <button className={`dil-button ${language === 'tr' ? 'active' : ''}`} id='tr' onClick={changeLanguage} >tr</button>
-            <button className={`dil-button ${language === 'en' ? 'active' : ''}`} id='en' onClick={changeLanguage} >en</button>
+            <button className={`dil-button ${language === 'tr' ? 'active' : ''}`} id='tr' onClick={() => { changeLanguage('tr') }} >tr</button>
+            <button className={`dil-button ${language === 'en' ? 'active' : ''}`} id='en' onClick={() => { changeLanguage('en') }} >en</button>
 
         </div>
     )
