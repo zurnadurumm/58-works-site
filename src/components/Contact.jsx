@@ -13,7 +13,7 @@ function Contact() {
                 <h1 className='text-primary text-4xl font-semibold  md:text-6xl lg:text-8xl'>Our Links</h1>
 
                 <div className=' contact-grid gap-5 lg:gap-16  bg-white '>
-                    <a href="https://discord.58worksproduction.com" target='_blank'>
+                    <a href="https://discord.com/invite/4EXB2trxVA" target='_blank'>
                         <div className='brd ' >
                             <img className='img' src={Discord} alt="Discord" />
                             <h4>Discord</h4>
