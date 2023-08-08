@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dil-button {
+  @apply p-2 font-normal text-white;
+}
+.active {
+  @apply font-bold text-primary;
+}
+
+.bg-landing {
+  background: url(assets/images/Landing.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.local-mod {
+  background-image: url(assets/images/LocalModding.png);
+}
+.save-edit {
+  background-image: url(assets/images/SaveEdit.png);
+}
+.convoys {
+  background-image: url(assets/images/Convoys.png);
+}
+.other-games {
+  background-image: url(assets/images/OtherGames.png);
+}
+
+.btn {
+  @apply relative bg-cover bg-center rounded-2xl text-transparent;
+  aspect-ratio: 650/310;
+  z-index: 0;
+  min-width: 300px;
+  max-width: 600px;
+  transition: all 0.15s linear;
+}
+.btn:is(:hover, :focus) {
+  @apply text-white text-xl;
+}
+.btn::before {
+  @apply absolute w-full h-full top-0 left-0  rounded-2xl;
+  content: "";
+  z-index: -1;
+  background-color: rgba(34, 34, 34, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  transition: transform 0.3s ease-in-out;
+  transform-origin: 0 0;
+  transform: scaleX(0);
+}
+.btn:is(:hover, :focus)::before {
+  @apply rounded-2xl;
+  transform: scaleX(1);
+}
+
+.brd {
+  @apply md:px-14 px-10 md:py-8 py-4 gap-5 border-2 flex flex-col items-center justify-center text-neutral font-semibold text-xl md:text-2xl border-neutral rounded-2xl shadow-md;
+  transition: all 0.3s ease-in-out;
+  transform: scale(1);
+}
+.brd:hover {
+  @apply shadow-lg border-primary text-primary;
+  transform: scale(1.05);
+}
+.img {
+  @apply w-3/4 md:w-5/6;
+}
+
+.contact-grid {
+  @apply grid  place-content-center;
+
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+@media screen and (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+  }
+}
+@media screen and (min-width: 1440px) {
+  .contact-grid {
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+    @apply gap-10;
+  }
+}
