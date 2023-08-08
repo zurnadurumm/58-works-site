@@ -1,5 +1,5 @@
 import { Routes } from "react-router-dom"
-import Home from "./pages/home"
+import Home from "./pages/home.jsx"
 
 import Terms from "./pages/Terms"
 import { BrowserRouter, Route, Link, Outlet } from "react-router-dom"
