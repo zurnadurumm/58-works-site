@@ -3,11 +3,11 @@ import { useTranslation } from 'react-i18next'
 
 
 
-function WhyUs() {
+function WhyUs(props, ref) {
     const { t } = useTranslation()
 
     return (
-        <div className='flex flex-col items-center bg-neutral  justify-center'>
+        <div ref={ref} className='flex flex-col items-center bg-neutral  justify-center'>
             <h1 className='font-semibold text-white pt-12 text-3xl md:text-5xl lg:text-7xl'>{t('whyUs')}</h1>
             <div id='whyus' className='bg-neutral   w-full h-fit mx-auto py-12 grid grid-cols-[auto] md:grid-cols-[auto_auto] items-center justify-center gap-4 '>
                 <button className='btn local-mod'>{t('localModding')} </button>
@@ -20,4 +20,4 @@ function WhyUs() {
     )
 }
 
-export default WhyUs
+export default React.forwardRef(WhyUs)

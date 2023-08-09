@@ -7,10 +7,10 @@ import { useTranslation } from 'react-i18next'
 
 
 
-function Contact() {
+function Contact(props, ref) {
     const { t } = useTranslation()
     return (
-        <div id='contact' className='w-full h-fit bg-white '>
+        <div ref={ref} id='contact' className='w-full h-fit bg-white '>
             <div className='w-[90%] md:w-[80%] lg:w-[75%] py-16 mx-auto h-full flex flex-col gap-24 justify-center items-center'>
                 <h1 className='text-primary text-4xl font-semibold  md:text-6xl lg:text-8xl'>{t('contactHeading')} </h1>
 
@@ -51,4 +51,4 @@ function Contact() {
     )
 }
 
-export default Contact
+export default React.forwardRef(Contact)
