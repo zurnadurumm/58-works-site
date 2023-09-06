@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import Landing from "../components/Landing";
 import NavBar from "../components/NavBar";
 import WhyUs from "../components/WhyUs";
-import React, { useRef } from "react";
+import  { useRef } from "react";
 
 function Home() {
     const homeRef = useRef(null);
